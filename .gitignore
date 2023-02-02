@@ -1,0 +1,11 @@
+*.sonarqube
+*.suo
+*.user
+*.vs
+*.pubxml
+*.cache
+bin
+obj
+certificates
+packages
+logs
