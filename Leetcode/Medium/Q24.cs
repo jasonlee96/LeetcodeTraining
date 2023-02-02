@@ -50,8 +50,6 @@ namespace Leetcode.Medium
 
             
             var currentPoint = head;
-            int count = 0;
-
             // first.next = lastSwap;
             //  second.next = first;
             var result = head.next;

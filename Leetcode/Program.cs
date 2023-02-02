@@ -11,7 +11,7 @@ namespace Leetcode
     {
         static async Task Main(string[] args)
         {
-            var Question = new Q24();
+            var Question = new Q3();
 
             var result = Question.Run();
 
