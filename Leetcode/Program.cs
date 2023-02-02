@@ -11,7 +11,7 @@ namespace Leetcode
     {
         static async Task Main(string[] args)
         {
-            var Question = new Q17();
+            var Question = new Q24();
 
             var result = Question.Run();
 
@@ -19,7 +19,7 @@ namespace Leetcode
             Console.WriteLine(result.ToString());
 
 
-            await RunAsync();
+            //await RunAsync();
 
         }
 
