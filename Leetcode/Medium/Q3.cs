@@ -41,7 +41,7 @@ namespace Leetcode.Medium
                     if (j == s.Length-1) list.Add((j - i)+1);
                 }
             }
-            return list.Max(); 
+            return list.Max();
         }
     }
 }
