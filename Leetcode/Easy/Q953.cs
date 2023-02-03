@@ -34,21 +34,30 @@ Given a sequence of words written in the alien language, and the order of the al
 
             for(int i = 1; i < words.Length; i++)
             {
+                bool identical = false;
                 // loop characters
                 for(int j = 0; j < words[i-1].Length; j++)
                 {
-                    if (order.IndexOf(words[i][j]) > order.IndexOf(words[i - 1][j]))
+                    try
                     {
-                        break;
-                    }
-                    
+                        if (order.IndexOf(words[i][j]) > order.IndexOf(words[i - 1][j]))
+                        {
+                            break;
+                        }
 
-                    if (order.IndexOf(words[i][j]) < order.IndexOf(words[i - 1][j]))
+
+                        if (order.IndexOf(words[i][j]) < order.IndexOf(words[i - 1][j]))
+                        {
+                            return false;
+                        }
+
+                        identical = true;
+                    }
+                    catch
                     {
-                        return false;
+                        return identical;
                     }
-
-                    if (words[i].Length != words[i-1].Length && words[i].Length == j + 2) return false; // if next word is shorter and current character is identical. 
+                    //if (words[i].Length != words[i-1].Length && words[i].Length == j+1) return false; // if next word is shorter and current character is identical. 
 
                 }
             }
