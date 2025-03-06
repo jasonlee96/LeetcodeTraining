@@ -11,7 +11,8 @@ namespace Leetcode
     {
         static async Task Main(string[] args)
         {
-            var Question = new Q67();
+            //await ConcurrentTask();
+            var Question = new Q6();
 
             var result = Question.Run();
 
@@ -34,6 +35,23 @@ namespace Leetcode
                 tasks.Add(task);
             }
             await Task.WhenAll(tasks);
+        }
+        public static async Task ConcurrentTask()
+        {
+            int n = 2;
+            var Q = new Q1115(n);
+
+            List<Task> tasks = new List<Task>();
+
+            for(int i = 0; i <n; i++)
+            {
+                tasks.Add(Task.Run(() => Q.Bar(() => Console.Write("bar"))));
+
+                tasks.Add(Task.Run(() => Q.Foo(() => Console.Write("foo"))));
+            }
+
+            await Task.WhenAll(tasks);
+
         }
     }
 }

@@ -20,7 +20,6 @@ namespace Leetcode.Easy
         {
             return AddBinary(a,b);
         }
-
         public string AddBinary(string a, string b)
         {
             string result = "";
