@@ -27,29 +27,24 @@ namespace Leetcode.Medium
         public string Run()
         {
             var result = "";
-            result = GenerateZigZag(input, numOfRow);
-            return result;
-        }
-        // recursive 
-        public string GenerateZigZag(string s, int num, List<string> combs)
-        {
-            if (num == 1) return s;
-
-            int lengthOfS = s.Length;
-            int splitPoint = (num - 1) * 2;
-            int splitIndex = 0;
-            string result = "";
-            List<string> combs = new List<string>();
-            while (splitIndex < lengthOfS)
+            if(numOfRow == 1 || numOfRow >= input.Length)
             {
-                result += s.Substring(splitIndex, 1); // take every first letter;
-                combs.Add(s.Substring(splitIndex + 1, splitIndex + splitPoint >= lengthOfS ? lengthOfS - 1 - splitIndex : splitPoint - 1));
-                splitIndex += splitPoint;
-
+                return input;
             }
-            foreach(var comb in combs)
+            int slicePoint = 2 * (numOfRow - 1);
+
+            for(int row = 0; row < numOfRow; row++)
             {
-                result += GenerateZigZag(comb, num - 1);
+                for (int i = row ; i < input.Length; i += slicePoint)
+                {
+                    result += input[i];
+                    int secondIdx = i + slicePoint - (2 * row);
+                    // eliminate first row and last row, as dont have diagonal character
+                    if (row > 0 && row < numOfRow - 1 && secondIdx < input.Length)
+                    {
+                        result +=input[secondIdx];
+                    }
+                }
             }
             return result;
         }

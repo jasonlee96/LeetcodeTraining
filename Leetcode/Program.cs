@@ -12,7 +12,7 @@ namespace Leetcode
         static async Task Main(string[] args)
         {
             //await ConcurrentTask();
-            var Question = new Q6();
+            var Question = new Q191();
 
             var result = Question.Run();
 
