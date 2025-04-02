@@ -1,7 +1,7 @@
 from typing import List, Optional, Dict, Set, Tuple
 #import questions
-from Questions.Easy.Q26 import Solution as Easy
-from Questions.Medium.Q48 import Solution as Medium
+from Questions.Easy.Q125 import Solution as Easy
+from Questions.Medium.Q209 import Solution as Medium
 
 # template for leetcode problems
 class sol:
