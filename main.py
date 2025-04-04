@@ -1,6 +1,6 @@
 from typing import List, Optional, Dict, Set, Tuple
 #import questions
-from Questions.Easy.Q125 import Solution as Easy
+from Questions.Easy.Q383 import Solution as Easy
 from Questions.Medium.Q209 import Solution as Medium
 
 # template for leetcode problems
@@ -18,7 +18,7 @@ class sol:
 
 if __name__ == '__main__':
     # Create a solution instance
-    solution = Medium()
+    solution = Easy()
 
     result = solution.solve()
     
